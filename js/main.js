@@ -78,5 +78,6 @@
             showText("Only rock, paper and scissors can play!", "gameresult", "Judge")}
         showText(" ", "computersays", "computer")
         }
+    //jhgjhg
 
 
