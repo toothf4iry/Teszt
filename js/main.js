@@ -3,37 +3,51 @@
     var resultElem = document.getElementById(y);
     resultElem.innerHTML =  z + " says: " + "<b>" + x + "</b>";  }
 
+
+    var showWhoWinsFunction = function (zs){
+        showText(zs + " wins", "gameresult", "Judge");
+    }
+
     var compare = function(choice1, choice2) {
+         var winner = {}  ;
+        // hogy lehetne a winner-t kivezetni innen? return?
+
         if (choice1 === choice2) {
             showText("Tie! Choose again!", "gameresult", "Judge" )
         }
 
         else if (choice1 === "rock") {
             if (choice2 === "scissors") {
-                showText("rock wins!", "gameresult", "Judge" );
+                winner.what="rock";
+                showWhoWinsFunction(winner.what)
             }
 
             else {
-                showText("paper wins!", "gameresult", "Judge" ) ;
+               winner.what="paper";
+                showWhoWinsFunction(winner.what)
             }
         }
         else if (choice1 === "paper") {
             if (choice2 === "rock") {
-                showText("paper wins!", "gameresult", "Judge" ) ;
+                winner.what="paper";
+                showWhoWinsFunction(winner.what)
             }
             else {
-                showText("scissors wins!", "gameresult", "Judge" ) ;
+               winner.what="scissors";
+                showWhoWinsFunction(winner.what)
             }
         }
         else if (choice1 === "scissors") {
             if (choice2 === "rock") {
-                showText("rock wins!", "gameresult", "Judge" ) ;
+               winner.what="rock" ;
+                showWhoWinsFunction(winner.what)
             }
             else {
-                showText("scissors wins!", "gameresult", "Judge" ) ;
+                winner.what="scissors";
+                showWhoWinsFunction(winner.what)
+
             }
         }
-
     }
 
     var computerChoiceFunction = function () {
@@ -56,11 +70,13 @@
         var userChoice = inputHtml.value
 
         showText(userChoice, "usersays", "user")      ;
-        computerChoiceFunction()
+
         if (userChoice === "rock" || userChoice === "paper" || userChoice === "scissors") {
+            computerChoiceFunction();
             compare(userChoice, computerChoiceFunction())  }
             else {
             showText("Only rock, paper and scissors can play!", "gameresult", "Judge")}
+        showText(" ", "computersays", "computer")
         }
 
 
