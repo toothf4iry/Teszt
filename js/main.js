@@ -4,8 +4,11 @@
     resultElem.innerHTML =  z + " says: " + "<b>" + x + "</b>";  }
 
 
-    var showWhoWinsFunction = function (zs){
+    var showWhatWinsFunction = function (zs){
         showText(zs + " wins", "gameresult", "Judge");
+    }
+    var showWhoWinsFunction = function (q){
+        showText(q + " wins", "whowonresult", "Judge")
     }
 
     var compare = function(choice1, choice2) {
@@ -19,32 +22,44 @@
         else if (choice1 === "rock") {
             if (choice2 === "scissors") {
                 winner.what="rock";
-                showWhoWinsFunction(winner.what)
+                winner.who="user"
+                showWhatWinsFunction(winner.what)
+                showWhoWinsFunction(winner.who)
             }
 
             else {
-               winner.what="paper";
-                showWhoWinsFunction(winner.what)
+                winner.what = "paper";
+                winner.who = "computer"
+                showWhatWinsFunction(winner.what)
+                showWhoWinsFunction(winner.who)
             }
         }
         else if (choice1 === "paper") {
             if (choice2 === "rock") {
                 winner.what="paper";
-                showWhoWinsFunction(winner.what)
+                winner.who = "user"
+                showWhatWinsFunction(winner.what)
+                showWhoWinsFunction(winner.who)
             }
             else {
                winner.what="scissors";
-                showWhoWinsFunction(winner.what)
+                winner.who = "computer"
+                showWhatWinsFunction(winner.what)
+                showWhoWinsFunction(winner.who)
             }
         }
         else if (choice1 === "scissors") {
             if (choice2 === "rock") {
                winner.what="rock" ;
-                showWhoWinsFunction(winner.what)
+                winner.who= "computer"
+                showWhatWinsFunction(winner.what)
+                showWhoWinsFunction(winner.who)
             }
             else {
                 winner.what="scissors";
-                showWhoWinsFunction(winner.what)
+                winner.who = "user"
+                showWhatWinsFunction(winner.what)
+                showWhoWinsFunction(winner.who)
 
             }
         }
@@ -75,9 +90,10 @@
             computerChoiceFunction();
             compare(userChoice, computerChoiceFunction())  }
             else {
-            showText("Only rock, paper and scissors can play!", "gameresult", "Judge")}
-        showText(" ", "computersays", "computer")
+            showText("Only rock, paper and scissors can play!", "gameresult", "Judge")
+            showText(" ", "computersays", "computer")                                 }
         }
+
     //jhgjhg
 
 
