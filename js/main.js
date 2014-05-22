@@ -1,6 +1,16 @@
+$(document).ready(function() {
+    $('#button1').click(function(){
+      $('#results').fadeIn('slow') ;
+
+    } );
+})      ;
+
+
+
+
 var showText = function (x, y, z) {
     var resultElem = document.getElementById(y);
-    resultElem.innerHTML = z + " says: " + "<b>" + x + "</b>";
+    resultElem.innerHTML = z + " says: " + "<br/>" + "<b>" + x + "</b>";
 }
 
 
@@ -75,7 +85,7 @@ var computerChoiceFunction = function () {
     } else {
         computerChoice = "scissors";
     }
-    showText(computerChoice, "computersays", "computer");
+    showText(computerChoice, "computersays", "Computer");
     return computerChoice;
 }
 
@@ -84,18 +94,18 @@ var runGameWithHtmlInput = function () {
     var inputHtml = document.getElementById("1")
     var userChoice = inputHtml.value
 
-    showText(userChoice, "usersays", "user");
+    showText(userChoice, "usersays", "User");
 
     if (userChoice === "rock" || userChoice === "paper" || userChoice === "scissors") {
-
+        computerChoiceFunction();
         compare(userChoice, computerChoiceFunction())
     }
     else {
         showText("Only rock, paper and scissors can play!", "gameresult", "Judge")
-        showText(" ", "computersays", "computer")
+        showText(" ", "computersays", "Computer")
     }
 }
 
-//jhgjhg
+
 
 
