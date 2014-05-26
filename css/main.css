@@ -71,3 +71,12 @@ label{
 
     display: none;
 }
+#1 {
+    border-radius: 5px;
+}
+
+#button1 {
+    background-color: #FF847C;
+    border-radius: 5px;
+    font-weight: bold;
+}
