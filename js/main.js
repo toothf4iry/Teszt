@@ -102,8 +102,8 @@ var runGameWithHtmlInput = function () {
     }
     else {
         showText("Only rock, paper and scissors can play!", "gameresult", "Judge");
-        showText(" ", "computersays", "Computer") ;
-        showText(" ", "whowonresult", "Judge")
+        showText(":s", "computersays", "Computer") ;
+        showText(">:|", "whowonresult", "Judge")
     }
 }
 
